@@ -1,0 +1,15 @@
+extends layout
+block content
+	h1 AÑADIR TAREA
+	form(action='/tareas/crear', method='post')
+		.form-group
+			label(for='nombre') Nombre:
+			input.form-control(type='text', name='nombre')
+		.form-group
+			label(for='etiquetas') Etiquetas:
+			input.form-control(type='text', name='etiquetas')
+		.form-group
+			label(for='realizacion') Realizacion:
+			input.form-control(type='text', name='realizacion')
+		.form-group
+			input(type='submit', value='Crear Tarea')

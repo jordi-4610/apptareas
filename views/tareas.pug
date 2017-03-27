@@ -1,0 +1,17 @@
+extends layout
+block content
+	h1 TAREAS
+	each tarea, i in tareas
+		.row
+			.col-md-3
+				h3 #{tarea.nom}
+			.col-md-6
+				.progress.progress-striped
+					.progress-bar.progress-bar-info(role='progressbar', aria-valuenow='20', aria-valuemin='0', aria-valuemax='100', style='width:'+tarea.realització+'%')
+			.col-md-3
+				a.btn.btn-default(href='#', role='button') Modificar
+	.row
+		.col-md-12
+			a.btn.btn-primary(href='/tareas/new', role='button') Crear Tarea		
+
+			
