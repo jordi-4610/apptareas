@@ -1,12 +1,12 @@
 var path = require('path');
 
-var DB_name  = (dc40pise18rf8r||null);
-var user     = (hqkdcxsslgpnyt||null);
-var pwd      = (8f302272b277824dc8d23e815a68934ca878fbf79f2487a7adf09b0387a39548||null);
-var protocol = (Postgres||null);
-var dialect  = (Postgres||null);
+var DB_name  = ("dc40pise18rf8r"||null);
+var user     = ("hqkdcxsslgpnyt"||null);
+var pwd      = ("8f302272b277824dc8d23e815a68934ca878fbf79f2487a7adf09b0387a39548"||null);
+var protocol = ("postgres"||null);
+var dialect  = ("postgres"||null);
 var port     = (5432||null);
-var host     = (ec2-23-23-237-68.compute-1.amazonaws.com||null);
+var host     = ("ec2-23-23-237-68.compute-1.amazonaws.com"||null);
 var storage  = process.env.DATABASE_STORAGE;
 
 
