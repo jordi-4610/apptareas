@@ -4,11 +4,11 @@ block content
 	each tarea, i in tareas
 		.row
 			.col-md-3
-				h3 #{tarea.nom}
-				P #{tarea.etiquetes}
+				h3 #{tarea.nombre}
+				P #{tarea.etiquetas}
 			.col-md-6
 				.progress.progress-striped
-					.progress-bar.progress-bar-info(role='progressbar', aria-valuenow='20', aria-valuemin='0', aria-valuemax='100', style='width:'+tarea.realització+'%')
+					.progress-bar.progress-bar-info(role='progressbar', aria-valuenow='20', aria-valuemin='0', aria-valuemax='100', style='width:'+tarea.porcentaje+'%')
 			.col-md-3
 				a.btn.btn-default(href='#', role='button') Modificar
 	.row
