@@ -24,8 +24,13 @@ var sequelize = new Sequelize(DB_name, user, pwd,
 );
 //Importación al objeto sequelize la tabla a Tbltareas que esta en tbltareas.js
 var Tbltareas = sequelize.import(path.join(__dirname,'tbltareas'));
+var Comment = sequelize.import(comment_path);
+
+Comment.belongsTo(Tbltareas);
+Tbltareas.hasMany(Comment);
 //Exportar definición de la tabla Tbltareas, para usarlo en otros lugares de la app
 exports.Tbltareas = Tbltareas;
+exports.Comment = Comment;
 //Sincronizando modelo definido con la BBDD podemos inicializarla
 sequelize.sync().then(function() {
 	Tbltareas.count().then(function (count){
