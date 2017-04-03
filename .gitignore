@@ -1,3 +1,4 @@
 /node_modules
 tbltareas.sqlite
 tblsqlite.sqlite
+.env
