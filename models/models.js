@@ -1,12 +1,12 @@
 var path = require('path');
 
-var DB_name  = (dc40pise18rf8r);
-var user     = (hqkdcxsslgpnyt);
-var pwd      = (8f302272b277824dc8d23e815a68934ca878fbf79f2487a7adf09b0387a39548);
-var protocol = (Postgres);
-var dialect  = (Postgres);
-var port     = (5432);
-var host     = (ec2-23-23-237-68.compute-1.amazonaws.com);
+var DB_name  = (dc40pise18rf8r||null);
+var user     = (hqkdcxsslgpnyt||null);
+var pwd      = (8f302272b277824dc8d23e815a68934ca878fbf79f2487a7adf09b0387a39548||null);
+var protocol = (Postgres||null);
+var dialect  = (Postgres||null);
+var port     = (5432||null);
+var host     = (ec2-23-23-237-68.compute-1.amazonaws.com||null);
 var storage  = process.env.DATABASE_STORAGE;
 
 
@@ -24,13 +24,9 @@ var sequelize = new Sequelize(DB_name, user, pwd,
 );
 //Importación al objeto sequelize la tabla a Tbltareas que esta en tbltareas.js
 var Tbltareas = sequelize.import(path.join(__dirname,'tbltareas'));
-var Comment = sequelize.import(comment_path);
 
-Comment.belongsTo(Tbltareas);
-Tbltareas.hasMany(Comment);
 //Exportar definición de la tabla Tbltareas, para usarlo en otros lugares de la app
 exports.Tbltareas = Tbltareas;
-exports.Comment = Comment;
 //Sincronizando modelo definido con la BBDD podemos inicializarla
 sequelize.sync().then(function() {
 	Tbltareas.count().then(function (count){
